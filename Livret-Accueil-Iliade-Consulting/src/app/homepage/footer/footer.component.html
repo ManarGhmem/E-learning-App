@@ -1,0 +1,29 @@
+<footer class="site-footer d">
+    <div class="container ">
+      <div class="footer-about"  style="margin-top: 40px;">
+                  <div class="about-us-image">
+                      <img src="../../../assets/images/iliade-removebg-preview.png" style="margin-left: 35px;" alt="Description de l'image">
+                  </div>
+      </div>
+      <div class="footer-links " style="margin-top: 50px; ">
+        <h3>Quick Links</h3>
+        <ul>
+          <li class="hover-animation" style="padding: 4px;"><a href="/home" >Home</a></li>
+          <li class="hover-animation" style="padding: 6px" (click)="scrollToAboutUs()" ><a>A propos</a></li>
+          <li class="hover-animation" style="padding: 6px;"><a routerLink="/projets" *ngIf="authenticated">Projets</a></li>
+          <li class="hover-animation" style="padding: 6px;"><a routerLink="/cours" *ngIf="authenticated" >Cours</a></li>
+          <li class="hover-animation" style="padding: 6px;"><a routerLink="/evaluation"*ngIf="authenticated">Evaluation</a></li>
+          
+        </ul>
+      </div>
+      <div class="footer-contact" style="margin-top: 50px;">
+        <h3>Contactez Nous</h3>
+        <p>Email: info@example.com</p>
+        <p>Phone: +216 99 99 77 25</p>
+        <p>Adresse: 17 rue du Lac Farwa <br>
+          1053 LES BERGES DU LAC 1 TUNIS</p>
+  
+      </div>
+    </div>
+
+  </footer>

@@ -1,0 +1,74 @@
+
+.bb-title {
+    position: relative;
+    display: inline-block;
+    color: black;
+}
+.bb-title::before {
+   content: '';
+   position: absolute;
+   background-color:#f07317;
+   width: 100%;
+   height: 3px;
+   bottom: -5px;
+   left: 0;
+   right: 0;
+}   
+
+.bb-title1 {
+    position: relative;
+    display: inline-block;
+}
+.bb-title1::before {
+   content: '';
+   position: absolute;
+   background-color:#f07317;
+   width: 100%;
+   height: 1.5px;
+   bottom: -5px;
+   left: 0;
+   right: 0;
+}   
+
+.card-canter{
+    .main-div  {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    
+    }
+}
+
+.hover-animation {
+    transition: all 0.3s ease;
+  }
+  
+  .hover-animation:hover {
+    transform: scale(1.1); 
+  }
+
+  .bb-title {
+    position: relative;
+    display: inline-block;
+    color: #f07317;
+    margin-left: 45%;
+    text-shadow: 2px 4px 3px rgba(211, 110, 64, 0.5);
+    margin-left: 40%;
+}
+.bb-title::before {
+   content: '';
+   position: absolute;
+   background-color:#f07317;
+   width: 100%;
+   height: 3px;
+   bottom: -5px;
+   left: 0;
+   right: 0;
+}   
+.img-responsive{
+    display: block;
+    height: auto;
+    max-width: 100%;
+	  margin:0 auto;
+}

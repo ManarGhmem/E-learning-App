@@ -1,0 +1,253 @@
+.card {
+
+  padding: 5px; /* Réduire l'espacement intérieur */
+  width: 300px;
+  box-shadow: 0 13px 4px rgba(0, 0, 0, 0.1); /* Ajouter une ombre */
+  /* background: hsla(0, 0%, 91%, 0.9); */
+  margin: 0 auto 20px; /* Ajouter un peu d'espace en bas de chaque carte */
+  border: 2px solid blue; /* Change the color to your desired color */
+  border-radius: 10px; /* Optional: Rounded corners for the card */
+}
+
+.bb-title {
+  position: relative;
+  display: inline-block;
+  font-family: "Oswald", sans-serif;
+  font-size: 44px; 
+  font-weight: 600;
+  text-transform: uppercase;
+  line-height: 1.5em;
+  letter-spacing: 2.4px; 
+
+  color :#0a2b59;
+}
+p{
+  color :#0a2b59;
+  margin-top: -3%;
+  text-align: center;
+  margin-bottom: 4%;
+}
+.col-lg-2,
+.col-md-2,
+.col-sm-2 {
+  flex: 0 0 calc(20% - 10px); /* Définir la largeur des colonnes */
+
+}
+.col-lg-2:nth-child(even),
+.col-md-2:nth-child(even),
+.col-sm-4:nth-child(even) {
+  margin-top: 50px; /* Décalage vertical pour chaque deuxième colonne */
+}
+
+/* .blue-rectangle {
+  background-color:#f8f9fa;
+  padding: 20px;
+  width: 80%;
+  margin-left: 10%;
+  height: 500px;
+} */
+
+
+@media (max-width: 992px) {
+  .col-lg-2,
+  .col-md-2,
+  .col-sm-2 {
+      flex: 0 0 calc(20% - 10px); /* Afficher cinq colonnes sur les écrans de taille moyenne */
+  }
+}
+
+@media (max-width: 768px) {
+  .col-lg-2,
+  .col-md-2,
+  .col-sm-2 {
+      flex: 0 0 calc(20% - 10px); /* Afficher cinq colonnes sur les petits écrans */
+  }
+}
+
+@media (max-width: 576px) {
+  .col-lg-2,
+  .col-md-2,
+  .col-sm-2 {
+      flex: 0 0 calc(100% - 10px); /* Afficher une colonne sur les écrans étroits */
+  }
+}
+
+.card-title{text-align: center;}
+.bb-title::before {
+  content: '';
+  position: absolute;
+margin-top: 50px;
+  width: 100%;
+  height: 3px;
+  bottom: -5px;
+  left: 0;
+  right: 0;
+  
+}
+
+.center-elements {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 7%;
+
+}
+
+.marg{
+  margin: 5%;
+}
+
+
+.hover-animation {
+  transition: all 0.3s ease; 
+}
+
+
+.hover-animation:hover {
+  transform: scale(1.1); 
+} 
+h2{margin-top: 3%;}
+
+
+/* Styles pour les cartes */
+
+/* Styles pour les cartes */
+
+/* Styles pour les cartes */
+
+/* .card {
+  background-color: #ffc182;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+} */
+
+.card img {
+  width: auto; 
+  height: auto;
+  max-height: 150px; 
+  object-fit: contain; 
+  margin-bottom: 10px; 
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.card-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.card-text {
+  color: #fff;
+}
+
+.btn-primary {
+  background-color: rgb(47, 47, 104);
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 15px;
+}
+
+.btn-primary:hover {
+  background-color: #333;
+}
+
+
+@media (max-width: 991.98px) {
+  .col-lg-3 {
+      flex: 0 0 50%; 
+  }
+}
+
+@media (max-width: 767.98px) {
+  .col-lg-3 {
+      flex: 0 0 100%;
+  }
+} 
+*/
+
+.about-company-text {
+  color: #000000; /* Couleur du texte */
+  font-family: "Oswald", sans-serif; /* Police de caractère */
+  font-size: 14px; /* Taille de la police */
+  font-weight: 300; /* Poids de la police */
+  text-transform: uppercase; /* Transformation en majuscules */
+  line-height: 1.285em; /* Hauteur de ligne */
+  letter-spacing: 1.4px; /* Espacement entre les lettres */
+  margin-left: 30%;
+  margin-top: -10%;
+}
+
+
+
+/* .about-company-divider {
+  width: 70px;
+  margin:70px; 
+
+  border-top: 4px solid #F7992B; 
+} */
+.col-6 .elementor-widget-container {
+  /* Styles pour le conteneur de widget */
+  margin-top: 12%; /* Marge supérieure */
+  padding: 20px; /* Espacement intérieur */
+  margin-right: 40%; /* Marge à droite */
+
+  /* Styles de texte */
+  color: #333; /* Couleur du texte */
+  font-family: Arial, sans-serif; /* Police de caractère */
+  font-size: 16px; /* Taille de la police */
+  line-height: 1.5; /* Hauteur de ligne */
+  text-align: justify; /* Justification du texte */
+}
+.about-text {
+  color: #000000; /* Couleur du texte */
+  font-family: "Oswald", sans-serif; /* Police de caractère */
+  font-size: 40px; /* Taille de la police */
+  font-weight: 600; /* Poids de la police (gras) */
+  text-transform: uppercase; /* Transformation en majuscules */
+  line-height: 1.125em; /* Hauteur de ligne */
+  letter-spacing: 2.4px; /* Espacement entre les lettres */
+  margin-right:10%;
+  margin-left: 12%;
+  margin-top: 10%;
+}
+
+img{
+  width: 70%;
+  height: 85%;
+}
+
+
+.col-6 .elementor-widget-container {
+  /* Styles pour le conteneur de widget */
+  margin-top: 5px; /* Marge supérieure */
+  padding: 20px; /* Espacement intérieur */
+  margin-right: 40%; /* Marge à droite */
+  margin-left: 10%;
+  /* Styles de texte */
+  color: #333; /* Couleur du texte */
+  font-family: Arial, sans-serif; /* Police de caractère */
+  font-size: 16px; /* Taille de la police */
+  line-height: 1.5; /* Hauteur de ligne */
+  text-align: justify; /* Justification du texte */
+}
+.about-company-divider {
+  width: 100px; /* Largeur de la ligne */
+  margin:4px; /* Centre la ligne horizontalement */
+  margin-left: 50px;
+  border-top: 4px solid #F7992B; /* Ajoute une ligne avec une couleur spécifique */
+  margin-top: 15px;
+
+}

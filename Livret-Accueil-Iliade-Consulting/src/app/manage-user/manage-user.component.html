@@ -1,0 +1,141 @@
+<div class="card">
+    <div class="card-body">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h4 class="card-title">All Users</h4>
+            <!-- <div>
+                <button (click)="openCreateUserModal()" type="button" class="btn btn-dark" data-toggle="modal"
+                    data-target="#createUserModal">
+                    Create New User
+                </button>
+            </div> -->
+        </div>
+
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Role</th>
+                        <th>Joining Date</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Utilisation de *ngFor pour itérer sur la liste des utilisateurs -->
+                    <tr *ngFor="let user of users">
+                        <td>
+                            <!-- Affichage du nom de l'utilisateur -->
+                            <a href="app-contact-detail.html" class="d-flex align-items-center">
+                                <img src="../../assets/images/users/3.jpg" alt="user" class="rounded-circle me-2"
+                                    width="30">
+                                <span>{{ user.name }}</span>
+                            </a>
+                        </td>
+                        <!-- Affichage de l'email de l'utilisateur -->
+                        <td>{{ user.email }}</td>
+                        <td>
+                            <!-- Affichage du rôle de l'utilisateur -->
+                            <span>{{ user.role }}</span>
+                        </td>
+                        <td>
+                            <!-- Affichage de la date de création/joining (joining_date) de l'utilisateur -->
+                            {{ user.joining_date | date:'shortDate' }}
+                        </td>
+                        <td>
+                            <!-- Ici, vous pouvez ajouter des boutons d'action comme Supprimer ou Mettre à jour -->
+                            <button style="margin-right: 10px;" (click)="deleteUser(user.id)" data-target="#updateUserModal" data-toggle="modal"
+                                type="button" class="btn btn-sm btn-danger delete-row-btn" data-toggle="tooltip"
+                                data-original-title="Delete">
+                                <i class="ti-trash"></i>
+                            </button>
+                            <!-- <button (click)="openUpdateUserModal(user)" type="button"
+                                class="btn btn-sm btn-primary update-row-btn" data-toggle="tooltip"
+                                data-original-title="Update">
+                                <i class="ti-pencil"></i>
+                            </button> -->
+                            <button (click)="openUpdateUserModal(user)" type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#updateUserModal">
+                                Update
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="text-muted mt-3">
+                Showing {{ users.length }} entries
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="createUserModal" tabindex="-1" role="dialog" aria-labelledby="createUserModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h5 class="modal-title" id="createUserModalLabel">Create New User</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <!-- Modal Body -->
+            <div class="modal-body">
+                <!-- User Creation Form -->
+                <form (ngSubmit)="createUser(newUserData)" #createForm="ngForm">
+                    <div class="form-group">
+                        <label for="createUserName">Name</label>
+                        <input type="text" class="form-control" id="createUserName" name="createUserName" [(ngModel)]="newUserData.name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="createUserEmail">Email</label>
+                        <input type="email" class="form-control" id="createUserEmail" name="createUserEmail" [(ngModel)]="newUserData.email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="createUserRole">Role</label>
+                        <!-- <input type="text" class="form-control" id="createUserRole" name="createUserRole" [(ngModel)]="newUserData.role" required> -->
+                        <select class="form-control select-arrow" id="updateUserRole" name="updateUserRole" [(ngModel)]="selectedUser.role">
+                            <option *ngFor="let option of roleOptions" [value]="option">{{ option }}</option>
+                        </select>
+                    </div>
+                    <button style="margin-right: 10px;" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Create</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="updateUserModal" tabindex="-1" role="dialog" aria-labelledby="updateUserModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h5 class="modal-title" id="updateUserModalLabel">Update User</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <!-- Modal Body -->
+            <div class="modal-body">
+                <!-- User Update Form -->
+                <form (ngSubmit)="updateUser(selectedUser.id, selectedUser)" #updateForm="ngForm">
+                    <div class="form-group">
+                        <label for="updateUserName">Name</label>
+                        <input type="text" class="form-control" id="updateUserName" name="updateUserName" [(ngModel)]="selectedUser.name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="updateUserEmail">Email</label>
+                        <input type="email" class="form-control" id="updateUserEmail" name="updateUserEmail" [(ngModel)]="selectedUser.email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="updateUserRole">Role</label>
+                        <!-- <input type="text" class="form-control" id="updateUserRole" name="updateUserRole" [(ngModel)]="selectedUser.role" required> -->
+                        <select class="form-control select-arrow " id="updateUserRole" name="updateUserRole" [(ngModel)]="selectedUser.role">
+                            <option *ngFor="let option of roleOptions" [value]="option">{{ option }}</option>
+                        </select>
+                    </div>
+                    <button style="margin-right: 10px;" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Update</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

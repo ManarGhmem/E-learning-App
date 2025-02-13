@@ -1,0 +1,108 @@
+<app-navbar></app-navbar>
+<div style="background-color:#f8f9fa;">
+    <div class="img-responsive">
+        <img src="../../assets/images/s.png" style="width: 1800px;" class="img-responsive">
+    </div>
+    <!-- <div class="row">
+    <div class="col-12">
+        <br><br>
+        <h1 class="f2 mt4 bb-title " style="text-align: center;">
+            Membres du projet
+        </h1>
+    </div>
+</div>
+<br><br> -->
+    <!-- <div style="background-color:rgb(255, 255, 255) ;
+">
+    <div #carousel class="carousel-container">
+        <div class="carousel">
+            <div *ngFor="let user of users" class="user">
+                <img [src]="user.imageUrl" alt="{{ user.name }}">
+                <div class="info">
+                    <h3>{{ user.name }}</h3>
+                    <p>Role: {{ user.role }}</p>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <br><br>
+
+    <div class="row">
+        <div class="col-12">
+            <br><br>
+            <h1 class="f2 mt4 bb-title " style="text-align: center;">
+                Projet-SAP
+            </h1>
+        </div>
+    </div>
+
+    <br><br><br>
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12">
+                <div class="card-deck">
+                <div class="card shadow" *ngFor="let project of projects;let i = index">
+                    <div class="card-body">
+                        <div class="col-md-6 mb-3 text-center image-container " style="margin-top: 8%;">
+                            <!-- <img src="../../assets/images/projet/total-removebg-preview.png" style="height: 150px;" class="img-responsive"> -->
+                            <img [src]="getLogo(i)" class="img-responsive">
+                        </div><br>
+                        <div class="form-row">
+                            <div class="col-md-12 mb-3">
+                                <label>Description</label>
+                                <p class="form-control">{{ project.description }}</p>
+                                <!-- <textarea type="text" class="form-control" placeholder="Description" required></textarea> -->
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <button  style="background-color:#f07317;border-color: #f07317;"
+                                (click)="checkAccess(project.id)" class="btn btn-primary" data-toggle="modal"
+                                data-target="#responsive-modal">Accéder</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br><br>
+    <!-- <div class="col-md-4">
+                <div class="card shadow"> 
+                    <div class="card-body">
+                        <div class="text-center">
+                            <img src="../../assets/images/projet/engie.png" style="height: 150px;" class="img-responsive">
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-12 mb-3">
+                                <label>Description</label>
+                                <textarea type="text" class="form-control" placeholder="Description" required></textarea>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <button routerLink="/projet-engie" style="background-color:#f07317;border-color: #f07317;" class="btn btn-primary" data-toggle="modal" data-target="#responsive-modal">Accéder</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card shadow"> 
+                    <div class="card-body">
+                        <div class="text-center">
+                            <img src="../../assets/images/projet/800Logo_DSI.jpg" style="height: 100px;margin-top: 10%;margin-bottom: 10px;" class="img-responsive">
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-12 mb-3"> 
+                                <label>Description</label>
+                                <textarea type="text" class="form-control" placeholder="Description" required></textarea>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <button routerLink="/projet-engie" style="background-color:#f07317;border-color: #f07317;" class="btn btn-primary" data-toggle="modal" data-target="#responsive-modal">Accéder</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->

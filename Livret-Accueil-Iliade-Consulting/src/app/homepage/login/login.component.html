@@ -1,0 +1,78 @@
+<div class="main-wrapper">
+    <div class="auth-wrapper d-flex no-block justify-content-center align-items-center"
+        style="background:url(../../assets/images/big/auth-bg.jpg) no-repeat center center; ">
+        <div class="auth-box" style="background-color: rgb(211, 225, 226); margin-top: 100px;">
+            <div id="loginform">
+                <div class="logo">
+                    <span class="db"><img src="../../../assets/images/iliade-removebg-preview.png" width="30%"
+                            alt="logo" /></span>
+                    <h5 class="font-medium m-b-20">Sign In </h5>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <form [formGroup]="form" (submit)="submit()" class="form-horizontal m-t-20" id="loginform"
+                            action="index.html">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="basic-addon1"><i class="ti-user"></i></span>
+                                </div>
+                                <input class="form-control form-control-lg" id="email" aria-label="Email"
+                                    aria-describedby="basic-addon1" formControlName="email" type="email"
+                                    class="form-control" placeholder="Email" required>
+                            </div>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="basic-addon2"><i class="ti-lock"></i></span>
+                                </div>
+                                <input class="form-control form-control-lg" id="password" type="password"
+                                    formControlName="password" type="password" class="form-control"
+                                    placeholder="Password" required>
+                            </div>
+                            <div *ngIf="errorMessage" class="alert alert-danger">
+                                {{ errorMessage }}
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-md-12">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                        <a href="javascript:void(0)" id="to-recover" class="text-dark float-right"><i
+                                                class="fa fa-lock m-r-4"></i> Forgot pwd?</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group text-center">
+                                <div class="col-xs-12 p-b-20">
+                                    <button class="btn btn-block btn-lg btn-info" type="submit"
+                                        style="background-color: rgb(70, 144, 223); ">Log In</button>
+                                </div>
+                            </div>
+                            <!-- <div id="g_id_onload"
+     data-client_id="307028265848-av8ts94q5869pb6msor9uof2hfenq6r6.apps.googleusercontent.com"
+     data-context="signin"
+     data-ux_mode="redirect"
+     data-login_uri="http://localhost:8000/api/auth/google/"
+     data-nonce=""
+     data-itp_support="true">
+</div>
+
+<div class="g_id_signin"
+     data-type="standard"
+     data-shape="rectangular"
+     data-theme="outline"
+     data-text="signin_with"
+     data-size="large"
+     data-logo_alignment="left">
+</div> -->
+                            <div class="form-group text-center">
+                                <div class="col-xs-12">
+                                    <p class="text-muted">Need to activate your account?</p>
+                                    <button class="btn btn-link" (click)="redirectToActivate()">Activate
+                                        Account</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

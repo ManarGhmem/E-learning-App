@@ -1,0 +1,121 @@
+/* .about-us-image {
+    width: 10%; 
+  }
+  .footer .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%; 
+}
+.footer {
+  padding: 30px 0;
+}
+
+*/
+
+/* .about-us-image {
+    width: 10%; 
+  }
+  .footer .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%; 
+}
+.footer {
+  padding: 30px 0;
+}
+
+*/
+
+/* Responsive Footer Styles */
+.site-footer {
+  background-image: url('../../../assets/images/s.png');
+  background-size: cover; /* Ajuste la taille de l'image pour couvrir tout le footer */
+  background-position: center; /* Centre l'image dans le footer */
+  /* background: rgba(2, 29, 62, 0.6); */
+ 
+  padding: 20px 0;
+}
+
+.site-footer {
+  position: relative; /* Assurez-vous que le pied de page est positionné relativement */
+}
+
+.site-footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; /* Utilisez 100% pour couvrir tout le pied de page */
+  height: 100%; /* Utilisez 100% pour couvrir tout le pied de page */
+  background: rgba(9, 47, 93, 0.5); /* Couleur de fond avec transparence */
+  z-index: 1;
+}
+
+/* Vous pouvez ajuster ces styles pour votre image */
+.site-footer img {
+  position: relative; /* Assurez-vous que l'image est positionnée relativement */
+  z-index: 2; /* Assurez-vous que l'image soit au-dessus de l'arrière-plan */
+}
+
+.footer-links {
+  position: relative; /* Assurez-vous que l'image est positionnée relativement */
+  z-index: 2; 
+  color: white;
+}
+.footer-contact{
+  position: relative; /* Assurez-vous que l'image est positionnée relativement */
+  z-index: 2;
+  color: white;
+}
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0 15px;
+}
+li{
+  color: white;
+}
+.footer-about, .footer-links, .footer-contact {
+  flex: 1;
+  min-width: 200px;
+  margin-bottom: 20px;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+h3 {
+  margin-top: 0;
+}
+
+@media (max-width: 600px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-about, .footer-links, .footer-contact {
+    min-width: 100%;
+    text-align: center;
+  }
+}
+
+.hover-animation {
+  transition: all 0.3s ease;
+}
+
+.hover-animation:hover {
+  transform: scale(1.1);
+}

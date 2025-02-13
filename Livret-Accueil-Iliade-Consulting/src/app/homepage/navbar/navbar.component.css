@@ -1,0 +1,105 @@
+.navbar {
+    position: absolute;
+    /* background: rgba(0, 34, 56, 0.4) !important;  */
+    z-index: 10;
+    width: 100%; /* Largeur de la barre de navigation */
+    padding: 10px; /* Ajoute un espace intérieur à la barre de navigation */
+    box-sizing: border-box; /* Assure que la largeur inclut le padding */
+    height: 80px; 
+}
+li {
+    padding-left: 30px;
+    display: inline;
+text-align: center;
+
+}
+
+a {
+    color: white;
+    font-size: large;
+}
+a:active{
+    color:blue;
+   
+
+}
+.nav-link.active {
+    color: #f07317;
+    text-shadow: 2px 4px 3px rgba(226, 89, 26, 0.5);/* Changez la couleur de fond selon vos besoins */
+    
+}
+
+.menu-toggler{
+    color: white;
+    font-size: large;
+}
+.menu-toggler:active{  color: #f07317;
+    text-shadow: 2px 4px 3px rgba(226, 89, 26, 0.5);/* Changez la couleur de fond selon vos besoins */}
+
+.hide-menu {
+    background-color: transparent; 
+    box-shadow: 2px 4px 3px rgba(226, 89, 26, 0.7); /* Apply the shadow to the box */
+    color: #fff;
+    padding: 10px;
+}
+
+.navbar-nav {
+    margin: 0 auto; /* Center the navbar-nav horizontally */
+  }
+  
+  .navbar-nav .nav-item {
+    margin-right: 20px; /* Add some space between nav items (adjust as needed) */
+  }
+
+button{background-color: coral;
+}
+.btn-primary {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: coral;
+    --bs-btn-border-color: coral;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: coral;
+    --bs-btn-hover-border-color: coral;
+    --bs-btn-focus-shadow-rgb: 49, 132, 253;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: coral;
+    --bs-btn-active-border-color: coral;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: coral;
+    --bs-btn-disabled-border-color: coral;
+    
+}
+
+.btn:hover{background-color: coral;}
+.arrow {
+    font-size: 0.8em; /* Taille de la flèche */
+    color: #fffcfc; /* Couleur de la flèche */
+    margin-left: 5px; /* Marge à gauche pour l'espacement */
+}
+
+
+.navbar-nav .dropdown:hover .dropdown-menu {
+    display: block;
+  }
+  
+  /* Hide dropdown menu by default */
+  .dropdown-menu {
+    display: none;
+    background-color:#f07317; /* Set transparent background */
+    /* border: none; Remove border */
+    padding: 1px 5; /* Adjust padding (top and bottom) around the dropdown menu */
+    height: 165px;
+
+  }
+  
+  /* Style dropdown menu items */
+  .dropdown-menu .dropdown-item {
+    color: #ffffff; /* Set text color */
+    padding: 1px;
+  }
+  
+  /* Style dropdown menu items on hover */
+  .dropdown-menu .dropdown-item:hover {
+    background-color: rgba(0, 0, 0, 0.1); /* Semi-transparent background on hover */
+  }

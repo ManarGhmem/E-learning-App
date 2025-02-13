@@ -1,0 +1,141 @@
+<div class="background-image">
+        <div class="d-flex justify-content-between p-3">
+            <div class="image">
+                <img src="../../../assets/images/iliade-removebg-preview.png" width="120" style="margin-left: 20%;" alt="logo">
+            </div>
+           <div class="video-container" style="width: 260px;" *ngIf="!isQuizCompleted">
+            <video #webcamVideo autoplay></video>
+        </div>
+            <div class="quiz-header">
+                <h4 style="font-family: cursive;margin-top: 40px;margin-right: 85px;">SAP-ISU Quiz!</h4>
+            </div>
+        </div>
+        <div class="card">
+            <div class="row d-flex justify-content-between" *ngIf="!isQuizStarted">
+                <h1 class="display-5 fw-bold">Bienvenue dans l'application Quiz</h1>
+                <!-- <p class="col-md-8 fs-4">Ce quiz contient 10 questions au total. Chaque question vaut 1 point.</p> -->
+                <h4>Règles :</h4>
+                <ol>
+                    <li>Une question correcte vous donne 1 point</li>
+                    <li>Une question incorrecte donne 0 point</li>
+                    <li>Ce quiz contient 10 questions au total.</li>
+                    <li>Vous aurez 60 secondes pour répondre à chaque question</li>
+                    <!-- <li>Refereshing the page will reset the Quiz</li> -->
+                </ol>
+                <h1 style="font-family: cursive;text-align: right;">All the best!!</h1>
+                <div class="col-md-6">
+                    <h3>Saisir l'email de votre Encadrant</h3>
+                    <div class="form-group">
+                        <!-- <label for="supervisorEmail">Supervisor Email:</label> -->
+                        <input type="email" id="supervisorEmail" [(ngModel)]="supervisorEmail" class="form-control"
+                        placeholder="Enter Supervisor Email" (ngModelChange)="validateEmail()">
+                    </div>
+                    <button class="btn btn-primary" [disabled]="!isEmailValid" (click)="saveSupervisorEmail()">Start Quiz</button>
+                </div>
+                <!-- <button class="btn btn-primary" (click)="startQuiz()">Start Quiz</button> -->
+            </div>
+            <!-- <div class="quiz-container"> -->
+        <ng-container *ngIf="isQuizStarted && !isQuizCompleted">
+            <div class="d-flex justify-content-around py-3">
+                <div class="score">
+                    <h5>{{points}} Points</h5>
+                </div>
+                <div class="question-remain">
+                    <span style="font-style: italic;">Question {{currentQuestion+1}} of {{questionList.length}}</span>
+                </div>
+                <div class="timer">
+                    <h5>{{counter}} sec ⏱</h5>
+                </div>
+            </div>
+            <div class="progress mb-3">
+                <div class="progress-bar progress-bar-striped bg-success" role="progressbar"
+                    [ngStyle]="{'width':progress+'%'}" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <div class="question">
+                <div class="card">
+                    <h3>{{questionList[currentQuestion]?.questionText}}</h3>
+                </div>
+            </div>
+            <div class="options">
+                <ol *ngFor="let option of questionList[currentQuestion]?.options">
+                    <li (click)="answer(currentQuestion+1, option); updateUserResponse(option.text)">
+                        <div appChangeBg [isCorrect]="option.correct" class="card">
+                            {{option.text}}
+                        </div>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="d-flex justify-content-between">
+                <button [disabled]="currentQuestion===0" class="btn" (click)="previousQuestion()"><i
+                        class="fa text-primary fa-chevron-left fa-3x" aria-hidden="true"></i></button>
+                <button class="btn" (click)="resetQuiz()"><i class="fa fa-refresh text-primary fa-3x"
+                        aria-hidden="true"></i></button>
+                <button class="btn" (click)="nextQuestion()"><i class="fa text-primary fa-chevron-right fa-3x"
+                        aria-hidden="true"></i></button>
+            </div>
+        </ng-container>
+
+        
+        <!-- <ng-container *ngIf="isQuizCompleted && !isAfterQuizCompleted">
+            <div class="row d-flex justify-content-between">
+                <img style="width: 45%;" class="img-fluid col-sm-12 mx-auto" src="../../assets/images/congrat.png" alt="">
+                <div class="result text-center col-md-6 col-sm-12">
+                    <button mat-icon-button (click)="retourAccueil()">
+                        <i class="fa fa-home" aria-hidden="true"></i>
+                    </button><br><br>
+                    <h3>Félicitations !! <br>Vous avez terminé le quiz "{{ quiz_name }}".</h3>
+                    <br><br>
+                    <p>Total de questions essayées : {{questionList.length}} </p>
+                    <p>Total de bonnes réponses : {{correctAnswer}} </p>
+                    <p>Total de réponses incorrectes : {{inCorrectAnswer}} </p>
+                    <p>Votre Score : {{points}} Points </p>
+                </div>
+            </div>
+            <div *ngIf="responseMessage">
+                <p>{{ responseMessage }}</p>
+            </div>
+        </ng-container> -->
+
+        <ng-container *ngIf="isQuizCompleted ">
+            <!-- Quiz results form section -->
+            <div class="result text-center ">
+                <button mat-icon-button (click)="retourAccueil()">
+                    <i class="fa fa-home" aria-hidden="true"></i>
+                </button><br><br>
+            <p>Votre Score : {{points}} Points </p>
+            <div *ngIf="responseMessage">
+                <p>{{ responseMessage }}</p>
+            </div>
+            </div>
+            <div class="quiz-results-form">
+                <h4>Questions et réponses :</h4>
+                <ng-container *ngFor="let question of questionList; let i = index">
+                    <div class="question">
+                        <p><strong>Question {{i + 1}}:</strong> {{question.questionText}}</p>
+                        <div class="form-group">
+                            <label for="userResponse{{i}}">Votre réponse:</label>
+                            <input type="text" id="userResponse{{i}}" class="form-control" [value]="getUserResponse(question)" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label for="correctAnswer{{i}}">Réponse correcte:</label>
+                            <input type="text" id="correctAnswer{{i}}" class="form-control" [value]="getCorrectAnswer(question)" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label for="explanation{{i}}">Explication:</label>
+                            <textarea id="explanation{{i}}" class="form-control" [value]="question.explanation" disabled></textarea>
+                        </div>
+                    </div>
+                    <hr>
+                </ng-container>
+            </div>
+
+        
+       
+        
+            <!-- <div class="form-group">
+                <label for="supervisorEmail">Adresse e-mail du superviseur:</label>
+                <input type="email" id="supervisorEmail" [(ngModel)]="supervisorEmail" (ngModelChange)="sendEmailAutomatically()"
+                    class="form-control" placeholder="Entrez l'adresse e-mail du superviseur">
+            </div> -->
+         

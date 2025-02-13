@@ -1,0 +1,84 @@
+/* Utilisation de la police Roboto pour tout le document */
+body, table {
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Style général pour les tables */
+table {
+    width: 100%; /* Tableau prend toute la largeur disponible */
+    border-collapse: collapse; /* Fusionner les bordures de cellules */
+}
+
+/* Style pour les en-têtes de colonne */
+th {
+    font-weight: bold; /* Mettre en gras les en-têtes de colonne */
+    text-align: left; /* Alignement du texte à gauche */
+    padding: 12px; /* Espacement intérieur des en-têtes de colonne */
+    background-color: rgb(64, 64, 252); /* Couleur de fond des en-têtes de colonne (bleu) */
+    color: #fff; /* Couleur du texte des en-têtes de colonne */
+}
+
+/* Style pour les cellules */
+td {
+    padding: 10px; /* Espacement intérieur des cellules */
+    text-align: left; /* Alignement du texte à gauche */
+}
+
+/* Alternance des couleurs de fond des lignes */
+tr:nth-child(even) {
+    background-color: #f8f9fa; /* Couleur de fond des lignes paires (gris clair) */
+}
+
+/* Boutons d'action (Supprimer, Mettre à jour) */
+.btn-danger, .btn-primary {
+    color: #fff; /* Couleur du texte des boutons */
+    background-color: #dc3545; /* Couleur de fond pour le bouton Supprimer (rouge) */
+}
+
+.btn-primary {
+    background-color: rgb(64, 64, 252); /* Couleur de fond pour le bouton Mettre à jour (bleu) */
+}
+
+/* Hover effect sur les boutons */
+.btn-danger:hover, .btn-primary:hover {
+    opacity: 0.85; /* Opacité réduite au survol */
+}
+
+/* Tooltip */
+.tooltip .tooltip-inner {
+    background-color: #007bff; /* Couleur de fond du tooltip */
+    color: #fff; /* Couleur du texte du tooltip */
+    border-radius: 4px; /* Coins arrondis */
+}
+
+.tooltip.top .tooltip-arrow {
+    border-top-color: #007bff; /* Couleur de la pointe du tooltip */
+}
+
+.tooltip.bottom .tooltip-arrow {
+    border-bottom-color: #007bff; /* Couleur de la pointe du tooltip */
+}
+
+/* Texte d'information sous le tableau */
+.text-muted {
+    color: #6c757d; /* Couleur du texte gris */
+}
+
+/* Taille du texte pour les en-têtes de colonne et les cellules */
+th, td {
+    font-size: 14px; /* Taille du texte */
+    line-height: 1.4; /* Espacement des lignes */
+}
+
+
+/* Style pour ajouter une flèche à droite du select */
+.aa {
+    width: 120px;
+    height: 30px;
+    border: 1px solid #999;
+    font-size: 18px;
+    color: #1c87c9;
+    background-color: #eee;
+    border-radius: 5px;
+    box-shadow: 4px 4px #ccc;
+}

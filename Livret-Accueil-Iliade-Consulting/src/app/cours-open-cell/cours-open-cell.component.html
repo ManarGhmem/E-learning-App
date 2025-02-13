@@ -1,0 +1,136 @@
+<div class="container-fluid">
+    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="cours" aria-expanded="false"
+        style="margin-left: 7px; margin-top: 10px;">
+        <i class="ti-loop"></i><span class="hide-menu">Go Back</span></a>
+    <div class="row card-container">
+        <div class="col-12 ">
+            <h1 class='f2 mt4 bb-title relative' style="margin-top: 20px;">
+                OPEN-CELL
+            </h1>
+        </div>
+        <div class="container" id="main-container">
+            <div class="row" style="margin-top: 10px;">
+                <div *ngFor="let opencell of opencell" class="col-lg-4 col-md-6 mb-4 card-padding hover-animation">
+                    <div class="card">
+                        <!-- <img class="card-img-top img-responsive" src="../../assets/images/Introd.png"  alt="Card image cap"> -->
+                        <div class="card-body">
+                            <h4 class="card-title">{{opencell?.titre}}</h4>
+                            <p class="card-text">{{opencell?.description}}</p>
+                            <a class="btn btn-primary mt-auto" href="{{opencell?.iframelink}}">Accéder au cours</a>
+                        </div>
+                        <div class="card-body" *ngIf="userRole === 'MANAGER'">
+                            <div class="float-right btn-group btn-group-sm" class="modal-footer"   >
+                                <a  (click)="onOpenModal(opencell, 'edit')" class="btn btn-primary tooltips" id="button"
+                                    data-placement="top" data-original-title="Edit"><i class="fas fa-pencil-alt"></i> </a>
+                                <a (click)="onOpenModal(opencell, 'delete')" id="button" class="btn btn-secondary tooltips"
+                                    data-placement="top" data-original-title="Delete"><i class="fa fa-times"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- *ngIf="(userRole$ | async) === 'MANAGER'" -->
+            <div>
+                <div >
+                    <button class="modal-footer"  *ngIf="userRole === 'MANAGER'"  class="btn btn-primary" id="button" data-toggle="modal" data-target="addOpencellModal"
+                        (click)="onOpenModal(null!,'add')">Ajouter un cours</button>
+                </div><br>
+            </div>
+            <!-- Add cour Modal -->
+            <div id="addOpencellModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="addOpencellModalLabel"
+                aria-hidden="true" style="display: none;">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Bonjour</h4>
+                        </div>
+                        <div class="modal-body">
+                            <form #addForm="ngForm" (ngSubmit)="onAddOpencell(addForm)">
+                                <div class="form-group">
+                                    <label for="titre">Titre</label>
+                                    <input type="text" ngModel name="titre" class="form-control" id="titre"
+                                        placeholder="Titre" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="description">Description</label>
+                                    <input type="text" ngModel name="description" class="form-control" id="description"
+                                        placeholder="Description du cour" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="iframelink">Link</label>
+                                    <input type="text" ngModel name="iframelink" class="form-control" id="iframelink"
+                                        placeholder="Donner le lien du cour" required>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" id="add-opencell-form" class="btn btn-secondary"
+                                      data-dismiss="modal">Close</button>
+                                    <button [disabled]="addForm.invalid" type="submit" class="btn btn-primary">Save changes</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- Edit Modal -->
+        <div class="modal fade" id="updateOpencellModal" tabindex="-1" role="dialog" aria-labelledby="OpencellEditModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="updateOpencellModalLabel">Edit Cour {{editOpencell?.titre}}</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form #editForm="ngForm">
+                            <div class="form-group">
+                                <label for="name">titre</label>
+                 <input type="text" ngModel="{{editOpencell?.titre}}" name="titre" class="form-control" id="titre" aria-describedby="emailHelp" placeholder="Name">
+              </div>
+              <input type="hidden" ngModel="{{editOpencell?.id}}" name="id"  class="form-control" id="id" placeholder="Email">
+              <div class="form-group">
+                 <label for="description">Description</label>
+                 <input type="description" ngModel="{{editOpencell?.description}}" name="description" class="form-control" id="description" placeholder="Description">
+              </div>
+              <div class="form-group">
+                 <label for="phone">iframelink</label>
+
+                 <input type="text" ngModel="{{editOpencell?.iframelink}}" name="iframelink" class="form-control" id="iframelink" placeholder="Lien de cour" >
+              </div>
+              <div class="modal-footer">
+                 <button type="button" id="" data-dismiss="modal" class="btn btn-secondary">Close</button>
+                 <button (click)="onUpdateOpencell(editForm.value)" data-dismiss="modal" class="btn btn-primary" >Save changes</button>
+              </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- Delete Modal -->
+<div class="modal fade " id="deleteOpencellModal" tabindex="-1" role="dialog" aria-labelledby="deleteModelLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+       <div class="modal-content">
+          <div class="modal-header" >
+             <h5 class="modal-title" id="deleteModelLabel">Delete Cour</h5>
+             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+             <span aria-hidden="true">&times;</span>
+             </button>
+          </div>
+          <div class="modal-body">
+             <p>Are you sure you want to delete cour {{deleteOpencell?.titre}}?</p>
+             <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                <button (click)="onDeleteOpencell(deleteOpencell?.id!)" class="btn btn-danger" data-dismiss="modal">Yes</button>
+             </div>
+          </div>
+       </div>
+    </div>
+  </div>
+  </div>
+

@@ -1,0 +1,27 @@
+
+button{
+    background-color: #FF4500;
+    margin-right: 2%;
+  }
+  .btn-primary {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: #f07317;
+    --bs-btn-border-color: #f07317;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #f07317;
+    --bs-btn-hover-border-color: #f07317;
+    --bs-btn-focus-shadow-rgb: 49, 132, 253;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #f07317;
+    --bs-btn-active-border-color: #f07317;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: #f07317;
+    --bs-btn-disabled-border-color: #f07317;
+}
+app-chatbot {
+  position: fixed;
+  bottom: 20px; /* Ajustez cette valeur selon vos préférences */
+  right: 20px; /* Ajustez cette valeur selon vos préférences */
+  z-index: 9999; /* Assurez-vous que le chatbot se superpose à d'autres éléments */
+}

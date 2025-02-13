@@ -1,0 +1,135 @@
+<div class="container-fluid">
+    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="total-energie" aria-expanded="false"
+        style="margin-left: 7px; margin-top: 10px;">
+        <i class="ti-loop"></i><span class="hide-menu">Go Back</span></a>
+    <div class="row card-container">
+        <div class="col-12 ">
+            <h1 class='f2 mt4 bb-title relative'>
+                TOTAL-ENERGIE
+            </h1>
+        </div>
+        <div class="container" id="main-container">
+            <div class="row" style="margin-top: 20px;">
+                <div *ngFor="let modeOperatoire of modeOperatoire" class="col-lg-4 col-md-6 mb-4 card-padding hover-animation">
+                    <div class="card">
+                        <!-- <img class="card-img-top img-responsive" src="../../assets/images/Introd.png"  alt="Card image cap"> -->
+                        <div class="card-body">
+                            <h4 class="card-title">{{modeOperatoire?.name}}</h4>
+                            <br>
+                            <!-- <p class="card-text">{{modeOperatoire?.description}}</p> -->
+                            <a class="btn btn-primary mt-auto" href="{{modeOperatoire?.iframeLink}}">Accéder </a>
+                        </div>
+                        <div class="card-body">
+                            <div class="float-right btn-group btn-group-sm">
+                                <a (click)="onOpenModal(modeOperatoire, 'edit')" class="btn btn-primary tooltips" id="button"
+                                    data-placement="top" data-original-title="Edit"><i class="fas fa-pencil-alt"></i> </a>
+                                <a (click)="onOpenModal(modeOperatoire, 'delete')" id="button" class="btn btn-secondary tooltips"
+                                    data-placement="top" data-original-title="Delete"><i class="fa fa-times"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary" id="button" data-toggle="modal" data-target="addmodeOperatoireModal"
+                        (click)="onOpenModal(null!,'add')">Ajouter un mode opératoire</button>
+                </div><br>
+            </div>
+            <!-- Add cour Modal -->
+            <div id="addmodeOperatoireModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="addmodeOperatoireModalLabel"
+                aria-hidden="true" style="display: none;">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Bonjour</h4>
+                        </div>
+                        <div class="modal-body">
+                            <form #addForm="ngForm" (ngSubmit)="onAddmodeOperatoire(addForm)">
+                                <div class="form-group">
+                                    <label for="name">Titre</label>
+                                    <input type="text" ngModel name="name" class="form-control" id="name"
+                                        placeholder="Titre" required>
+                                </div>
+                                <!-- <div class="form-group">
+                                    <label for="description">Description</label>
+                                    <input type="text" ngModel name="description" class="form-control" id="description"
+                                        placeholder="Description du cour" required>
+                                </div> -->
+
+                                <div class="form-group">
+                                    <label for="iframeLink">Link</label>
+                                    <input type="text" ngModel name="iframeLink" class="form-control" id="iframeLink"
+                                        placeholder="Donner le lien du cour" required>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" id="add-modeOperatoire-form" class="btn btn-secondary"
+                                        data-dismiss="modal">Close</button>
+                                    <button [disabled]="addForm.invalid" type="submit" class="btn btn-primary">Save changes</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- Edit Modal -->
+        <div class="modal fade" id="updatemodeOperatoireModal" tabindex="-1" role="dialog" aria-labelledby="modeOperatoireEditModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="updatemodeOperatoireModalLabel">Edit Cour {{editmodeOperatoire?.name}}</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form #editForm="ngForm">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                 <input type="text" ngModel="{{editmodeOperatoire?.name}}" name="name" class="form-control" id="name" aria-describedby="emailHelp" placeholder="Name">
+              </div>
+              <input type="hidden" ngModel="{{editmodeOperatoire?.id}}" name="id"  class="form-control" id="id" placeholder="Email">
+              <!-- <div class="form-group">
+                 <label for="description">Description</label>
+                 <input type="description" ngModel="{{editmodeOperatoire?.description}}" name="description" class="form-control" id="description" placeholder="Description">
+              </div> -->
+              <div class="form-group">
+                 <label for="phone">iframeLink</label>
+                 <input type="text" ngModel="{{editmodeOperatoire?.iframeLink}}" name="iframeLink" class="form-control" id="iframeLink" placeholder="Lien de cour" >
+              </div>
+              <div class="modal-footer">
+                 <button type="button" id="" data-dismiss="modal" class="btn btn-secondary">Close</button>
+                 <button (click)="onUpdatemodeOperatoire(editForm.value)" data-dismiss="modal" class="btn btn-primary" >Save changes</button>
+              </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- Delete Modal -->
+<div class="modal fade " id="deletemodeOperatoireModal" tabindex="-1" role="dialog" aria-labelledby="deleteModelLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+       <div class="modal-content">
+          <div class="modal-header">
+             <h5 class="modal-title" id="deleteModelLabel">Delete Cour</h5>
+             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+             <span aria-hidden="true">&times;</span>
+             </button>
+          </div>
+          <div class="modal-body">
+             <p>Are you sure you want to delete cour {{deletemodeOperatoire?.name}}?</p>
+             <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                <button (click)="onDeletemodeOperatoire(deletemodeOperatoire?.id!)" class="btn btn-danger" data-dismiss="modal">Yes</button>
+             </div>
+          </div>
+       </div>
+    </div>
+  </div>
+  </div>
+

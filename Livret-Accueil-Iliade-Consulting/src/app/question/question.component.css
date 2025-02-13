@@ -1,0 +1,127 @@
+.card {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 10px;
+    margin-top: -20px;
+    margin-bottom: 20px;
+}
+
+li {
+    list-style-type: none;
+    cursor: pointer;
+    margin: 10px 0;
+}
+
+li .card:hover {
+    border: 1px solid blue;
+}
+
+ol {
+    padding: 0;
+}
+
+/* Style for the container */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Style for the card */
+
+/* Style for the header */
+.quiz-header {
+    text-align: center;
+}
+
+/* Style for the welcome message */
+.display-5 {
+    font-size: 2.5rem;
+}
+
+/* Style for the rules */
+ol {
+    padding-left: 20px;
+}
+
+/* Style for the start button */
+.btn-primary {
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* Style for the question */
+.question {
+    margin-bottom: 20px;
+}
+
+/* Style for the options */
+.options {
+    list-style: none;
+    padding-left: 0;
+}
+
+/* Style for the individual option */
+.options li {
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+/* Style for the progress bar */
+.progress {
+    height: 20px;
+}
+
+/* Style for the result section */
+.result {
+    margin-top: 20px;
+}
+
+/* Style for the result image */
+.img-fluid {
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+.background-image {
+    background-image: url('../../assets/images/background/active-bg.jpg');
+
+        background-position: center;
+        height: 100vh; /* Set height to 100% of viewport height */
+}
+
+/* .quiz-container {
+    background-image: url('../../assets/images/un');
+ 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    padding: 20px;
+} */
+
+
+:host {
+    display: block;
+    padding: 1rem;
+  }
+  
+  video {
+    width: 100%;
+    max-width: 640px;
+    height: auto;
+  }
+  
+  .video-container {
+    width: 260px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    padding: 8px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1); 
+    overflow: hidden;
+}
+
+.video-container video {
+    width: 100%;
+}

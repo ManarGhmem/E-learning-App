@@ -1,0 +1,88 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #f2f2f2;
+}
+.bb-title {
+  position: relative;
+  display: inline-block;
+  font-family: "Oswald", sans-serif;
+  font-size: 44px; 
+  font-weight: 500;
+  /* text-transform: uppercase; */
+  line-height: 1.5em;
+  letter-spacing: 2.4px; 
+}
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.logos {
+  overflow: hidden;
+  padding: 60px 0;
+  background: white;
+  white-space: nowrap;
+  position: relative;
+}
+
+.logos:before,
+.logos:after {
+  position: absolute;
+  top: 0;
+  width: 250px;
+  height: 100%;
+  content: "";
+  z-index: 2;
+}
+
+.logos:before {
+  left: 0;
+  background: linear-gradient(to left, rgba(255, 255, 255, 0), white);
+}
+
+.logos:after {
+  right: 0;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), white);
+}
+
+.logos:hover .logos-slide {
+  animation-play-state: paused;
+}
+
+.logos-slide {
+  display: inline-block;
+  animation: 70s slide infinite linear;
+}
+
+.logos-slide img {
+  height: 50px;
+  margin: 0 60px;
+}
+
+.carousel-container {
+  margin: 0 auto; /* This centers the container horizontally */
+  max-width: 90%; /* Adjust the maximum width according to your preference */
+}
+.bb-title {
+  position: relative;
+  display: inline-block;
+  font-family: "Oswald", sans-serif;
+  font-size: 44px; 
+  color :#0a2b59;
+  text-transform: uppercase;
+  line-height: 1.5em;
+  letter-spacing: 2.4px; 
+  font-weight: 600 !important;
+}
+p{
+  color :#0a2b59;
+}

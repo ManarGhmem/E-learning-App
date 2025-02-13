@@ -1,0 +1,60 @@
+.bb-title {
+    position: relative;
+    display: inline-block;
+    color: #f07317;
+    margin-top: 20px;
+    margin-left:37%;
+    text-shadow: 2px 4px 3px rgba(226, 89, 26, 0.5);
+}
+ 
+.hover-animation {
+    transition: all 0.3s ease; 
+  }
+  
+
+  .hover-animation:hover {
+    transform: scale(1.1);
+  }
+  .card-margin card{
+    height: 980px;
+  }
+
+.img-responsive{
+   display: block;
+   height: auto;
+   max-width: 100%;
+     margin:0 auto;
+}
+.card-text{
+  height: 100px;
+}
+.card-title{
+ text-decoration: underline;
+
+}
+
+.card-text{
+  text-decoration: none;
+}
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card-padding {
+  display: flex;
+}
+
+.card {
+  flex: 1;
+}
+.card {
+
+  border-radius: 10px; 
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); 
+
+}
+
+.card-body{
+  background-color: rgb(241, 241, 241);
+}

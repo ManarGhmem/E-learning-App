@@ -1,0 +1,162 @@
+<div class="container-fluid" style="background-color: rgb(240, 240, 240)">
+    <div class="row">
+        <div class="col-12">
+            <div class="title-image" style="display: flex; align-items: center; justify-content: space-between;">
+                <div style="display: flex; align-items: center;">
+                    <img src="../../assets/images/image-removebg-preview (3).png" style="margin-top: 30px; margin-left: 80px; width: 200px;">
+                    <h1 style="white-space: nowrap; margin-top: 50px; color: rgb(3, 3, 148); text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">TOTAL ENERGIE</h1>
+                </div>
+                <button mat-icon-button (click)="retourAccueil()">
+                    <i class="fa fa-home" aria-hidden="true"></i>
+                </button>
+            </div>
+            </div>
+        </div>
+<div style="background-color:rgb(240, 240, 240) ;">
+    <div #carousel class="carousel-container img-responsive">
+        <div class="carousel img-responsive">
+            <div *ngFor="let user of users"  class="user-card">
+                <img [src]="user.imageUrl" alt="{{ user.name }}" class="user-image">
+                <div class="info">
+                    <h3>{{ user.name }}</h3>
+                    <p>Role: {{ user.role }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+ 
+    <!-- <div class="container">
+        <div class="row ">
+            <div class="col-12">
+    
+                <h1 class='f2 mt4 bb-title relative' style="margin-left: 40%; ">
+                    A PROPOS
+                </h1>
+            </div>
+        </div> -->
+        <br>
+        <div class="row justify-content-center">
+            <div class="col-10 m-t-30">
+                <div class="card-deck ">
+                    <div class="col-lg-4 col-md-4 card-padding hover-animation img-responsive">
+                        <a routerLink="/mode-operatoire">
+                            <img class="card-img-top img-responsive" src="../../assets/images/support de formation (3).png">
+                        </a>
+                    </div>
+                    <div class="col-lg-4 col-md-4 card-padding hover-animation">
+                        <a routerLink="/mode-operatoire">
+                            <img class="card-img-top img-responsive" src="../../assets/images/support de formation (1).png">
+                        </a>
+                    </div>
+                    <div class="col-lg-4 col-md-4 card-padding hover-animation">
+                        <a routerLink="/platforme-logiciels">
+                            <img class="card-img-top img-responsive" src="../../assets/images/support de formation (2).png">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container-fluid" style="margin-top: 50px;">
+        <div class="col-12">
+            <div class="card" style="background-color: rgb(232, 232, 232);">
+                <div class="card-body">
+                    <h1>Directives</h1>
+                    <form [formGroup]="messageForm" (ngSubmit)="updateUserText()">
+                        <textarea formControlName="userText" class="form-control" rows="5" required></textarea>
+                        <div class="text-right">
+                            <button type="submit" class="btn btn-outline">Envoyer</button>
+                        </div>
+                    </form>
+                    <div>
+                        <h2>Tous les messages :</h2>
+                        <ul>
+                            <li *ngFor="let message of allMessages; let i = index; trackBy: trackByFn" class="message-item">
+                                {{ message.userName }}
+                                <br>
+                                {{ message.text }} <br>{{ message.date | date:'medium' }}
+                                <button class="fas fa-trash-alt delete-icon" *ngIf="userRole === 'MANAGER'" (click)="deleteMessage(i)"></button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+                        <!-- <div class="card-body ">
+                            <h4 class="card-title"style="color:  #0a2b59; margin-top:10px">Mode Operatoire</h4>
+                            <div class="text-right">
+                                <a href="javascript:void(0)" class="btn btn-primary"
+                                    style="background-color: #0a2b59;">Accéder</a>
+                            </div>
+                        </div>
+                    </div> -->
+                    <!-- <div class="card card-sm hover-animation"> 
+                        <img class="card-img-top img-responsive" src="../../assets/images/big/img3.jpg"
+                            alt="Card image cap">
+                        <div class="card-body">
+                            <h4 class="card-title"style="color:#0a2b59;">Liens</h4>
+                            <div class="text-right">
+                                <a href="javascript:void(0)" class="btn btn-primary"
+                                    style="background-color: #0a2b59;">Accéder</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+<!-- 
+
+
+     <div class="row" style="margin-top: 25px;">
+       <div class="row justify-content-center">
+            <div class="col-lg-2 col-md-6 card-padding hover-animation" style="width: 350px; height: auto;">
+                <a routerLink="/mode-operatoire">
+                <div class="card mx-auto">
+                    <img class="card-img-top img-responsive" src="../../assets/images/support de formation (1).png">
+
+                
+                </div>
+            </a>
+            </div>
+            <div class="col-lg-2 col-md-6 card-padding hover-animation " style="width: 400px;">
+                <div class="card mx-auto">
+                    <img class="card-img-top img-responsive" src="../../assets/images/PLAT.png">
+                    <a href="javascript:void(0)" class="btn btn-primary" routerLink="/platforme-logiciels">Accéder</a>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-6 card-padding hover-animation " style="width: 400px;">
+                <div class="card mx-auto">
+                    <img class="card-img-top img-responsive" src="../../assets/images/PLAT.png">
+
+                    <a href="javascript:void(0)" class="btn btn-primary" routerLink="/platforme-logiciels">Accéder</a>
+                </div>
+            </div>
+<br><br><br>
+            <div class="container-fluid" style="margin-top: 50px;">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="col-md-4 mb-3">
+                                <h1>Directives</h1>
+                            </div>
+                            <div class="form-row">
+                                <div class="col-md-6 mb-3">
+                                    <textarea type="text" class="form-control" placeholder="Description"
+                                        required></textarea>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <button class="btn btn-primary" style="background-color: #0a2b59;">Envoyer</button>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->

@@ -1,0 +1,17 @@
+.square-btn {
+    z-index:+2147483647;
+    position:fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 15%;
+    height: 50px;
+    color: white;
+    border: none;
+    text-align: center;
+    cursor: pointer;
+    padding: 5px;
+    /* Ajoutez d'autres styles selon vos préférences */
+  }
+ 
+
+  

@@ -1,0 +1,45 @@
+ <div class="container">
+    <div class="chatbox">
+        <div class="chatbox__support"#chatBox>
+            <!-- Header du chat -->
+            <div class="chatbox__header">
+                <!-- Ici vous pouvez placer une image ou un icône pour le chat -->
+                <div class="chatbox__image--header">
+                    <img src="https://img.icons8.com/color/48/000000/circled-user-female-skin-type-5--v1.png" style="margin-left: -20px;" alt="image">
+                </div>
+                <div class="chatbox__content--header">
+                    <!-- <h4 class="chatbox__heading--header">Chat support</h4>
+                    <p class="chatbox__description--header">Bonjour. Je suis IliadeBot. Comment puis-je vous aider?</p> -->
+                    <h1 class="chatbox__heading--header">IliadeBot</h1>
+                </div>
+                <button (click)="toggleFullScreen(chatBox)" style="margin-left: 20%;" class="fullscreen-button">
+                    <i class="fas fa-expand"></i> 
+                </button>                
+            </div>
+          <!-- <div class="chatbox__messages">
+            <div *ngFor="let message of messages.slice().reverse()" class="message" [ngClass]="{'message--user': message.user, 'message--bot': message.bot}">
+                {{ message.user || message.bot }} : {{ message.message }}
+            </div>
+        </div> -->
+        <div class="chatbox__messages">
+          <div *ngFor="let message of messages.slice().reverse()" class="message" [ngClass]="{'message--user': message.user, 'message--bot': message.bot}">
+              {{ message.message }}
+          </div>
+      </div>
+      
+        
+            <!-- Footer du chat -->
+            <div class="chatbox__footer">
+                <input type="text" [(ngModel)]="newMessage" placeholder="Écrire un message..." (keyup.enter)="OnsendButton()">
+                <button class="send__button" (click)="OnsendButton()">Envoyer</button>
+            </div>
+        </div>
+        <!-- Bouton pour ouvrir/fermer le chat -->
+        <div class="chatbox__button">
+            <button (click)="toggleChatbox()">
+                <!-- Ici vous pouvez placer une icône pour le bouton -->
+                <img src="../../assets/images/h.PNG" style="width: 40px; height: 32px;" viewBox="0 0 40 32">
+            </button>
+        </div>
+    </div>
+</div>

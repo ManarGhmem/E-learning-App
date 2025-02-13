@@ -1,0 +1,169 @@
+.navbar {
+    position: absolute;
+    background: transparent !important;
+    z-index: 10;
+    border-radius: 1px solid red;
+    width: 100%;
+}
+
+li {
+    padding-left: 30px;
+    display: inline;
+}
+
+a {
+    color: white;
+    font-size: large;
+}
+a:active{
+    color:blue;
+   
+
+}
+.nav-link.active {
+    color: #f07317;
+    text-shadow: 2px 4px 3px rgba(226, 89, 26, 0.5);/* Changez la couleur de fond selon vos besoins */
+    
+}
+
+.menu-toggler{
+    color: white;
+    font-size: large;
+}
+.menu-toggler:active{  color: #f07317;
+    text-shadow: 2px 4px 3px rgba(226, 89, 26, 0.5);/* Changez la couleur de fond selon vos besoins */}
+
+.hide-menu {
+    background-color: transparent; 
+    box-shadow: 2px 4px 3px rgba(226, 89, 26, 0.7); /* Apply the shadow to the box */
+    color: #fff;
+    padding: 10px;
+}
+
+.navbar-nav {
+    margin: 0 auto; /* Center the navbar-nav horizontally */
+  }
+  
+  .navbar-nav .nav-item {
+    margin-right: 20px; /* Add some space between nav items (adjust as needed) */
+  }
+
+
+.bb-title {
+    position: relative;
+    display: inline-block;
+    color: #f07317;
+    margin-left: 45%;
+    text-shadow: 2px 4px 3px rgba(226, 89, 26, 0.5);
+}
+.bb-title::before {
+   content: '';
+   position: absolute;
+   background-color:#f07317;
+   width: 100%;
+   height: 3px;
+   bottom: -5px;
+   left: 0;
+   right: 0;
+}   
+
+.bb-title1 {
+    position: relative;
+    display: inline-block;
+}
+.bb-title1::before {
+   content: '';
+   position: absolute;
+   background-color:#f07317;
+   width: 100%;
+   height: 1.5px;
+   bottom: -5px;
+   left: 0;
+   right: 0;
+}   
+
+.card-canter{
+    .main-div  {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    
+    }
+}
+.hover-animation {
+    transition: all 0.3s ease; 
+  }
+  
+  .hover-animation:hover {
+    transform: scale(1.1); 
+  }
+
+
+.img-responsive{
+    display: block;
+    height: auto;
+    max-width: 100%;
+      margin:0 auto;
+}
+
+
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Pour centrer verticalement */
+    margin: 0;
+}
+
+.carreaux-container {
+    display: flex;
+    justify-content: center;
+    gap: 100px; /* Espacement entre les carreaux */
+}
+
+
+.carreau {
+    display: flex;
+    justify-content: center; /* Centrer horizontalement */
+    align-items: center; /* Centrer verticalement */
+    width: 300px; /* Largeur du carreau */
+    height: 300px; /* Hauteur du carreau */
+    background-color: rgba(9, 47, 93, 0.4);/* Couleur de fond */
+    border-radius: 10px; /* Coins arrondis avec un rayon de 10px */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre légère */
+    transition: background-color 0.3s ease; /* Transition douce de la couleur de fond */
+    cursor: pointer; /* Change le curseur en pointeur au survol */
+}
+
+.carreau:hover {
+    background-color: rgba(9, 47, 93, 0.4); /* Change la couleur de fond au survol */
+}
+
+.carreau img {
+    max-width: 100%; /* Assure que l'image ne dépasse pas la largeur du conteneur */
+    max-height: 100%; /* Assure que l'image ne dépasse pas la hauteur du conteneur */
+    border-radius: 10px; /* Coins arrondis pour l'image */
+}
+
+
+.img-responsive {
+    position: relative; /* Assurez-vous que le positionnement est relatif pour le conteneur */
+}
+
+.img-responsive::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(9, 47, 93, 0.4); /* Couleur de fond semi-transparente */
+    z-index: 1; /* Assurez-vous que le fond semi-transparent est en arrière-plan */
+}
+
+.img-responsive img.site {
+    position: relative; /* Assurez-vous que la position est relative pour l'image */
+    z-index: 2; /* Assurez-vous que l'image est en premier plan */
+}

@@ -1,0 +1,45 @@
+
+<nav class="navbar navbar-expand-sm">
+  <div class="container-fluid">
+    <a style="margin-left: 7%;" class="navbar-brand" href="javascript:void(0)">
+      <img src="https://cdn.bitrix24.fr/b18524105/landing/39c/39c270ae0491de4619ee48118dbb9687/LOGO_01_2x_1x_1x.png"
+        alt="logo">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mynavbar">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a routerLink="/home" class="nav-link" routerLinkActive="active" href="javascript:void(0)"
+           >Home</a>
+        </li>
+  
+         <li class="nav-item dropdown">
+          <a  routerLink="/projets" class="nav-link dropdown-toggle" href="#" id="projetsDropdown" role="button"
+            data-bs-toggle="dropdown" aria-expanded="false">
+            Projets
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="projetsDropdown">
+            <li><a class="dropdown-item " routerLink="/sap-projet" routerLinkActive="active">SAP</a></li>
+            <li><a class="dropdown-item" routerLink="/opencell-projet" routerLinkActive="active">OPEN-CELL</a></li>
+            <li><a class="dropdown-item" routerLink="/sap-abap-projet" routerLinkActive="active">Ui Path</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/cours" routerLinkActive="active" class="nav-link" >Cours</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/evaluation" class="nav-link" routerLinkActive="active" href="javascript:void(0)"
+           >Evaluation</a>
+        </li>
+        <li class="nav-item" *ngIf="isHomePage()">
+          <a (click)="scrollToAboutUs()" class="nav-link" href="javascript:void(0)" >A propos</a>
+        </li>
+      </ul>
+      <button class="btn btn-primary" routerLink="/login" type="button" (click)="logout()" 
+        style="margin: 5px;">Logout</button>
+      <button routerLink="/manageuser" class="btn btn-primary" type="button" *ngIf="userRole === 'MANAGER'">ManageUsers</button>
+    </div>
+  </div>
+</nav> 

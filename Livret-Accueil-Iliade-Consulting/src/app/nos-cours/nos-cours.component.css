@@ -1,0 +1,91 @@
+.bb-title {
+    position: relative;
+    display: inline-block;
+    color: #f07317;
+    margin-left: 45%;
+    text-shadow: 2px 4px 3px rgba(226, 89, 26, 0.5);
+}
+ 
+.hover-animation {
+    transition: all 0.3s ease; 
+  }
+  
+
+  .hover-animation:hover {
+    transform: scale(1.1);
+  }
+  .card-margin card{
+    height: 100px;
+    width: 100px;
+  }
+
+.img-responsive{
+   display: block;
+   height: auto;
+   max-width: 100%;
+     margin:0 auto;
+}
+.card-text{
+  height: 100px;
+}
+.card-title{
+ text-decoration: underline;
+
+}
+
+.card-text{
+  text-decoration: none;
+}
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; 
+
+}
+
+.card-padding {
+  display: flex;
+  width: 300px;
+  justify-content: center; 
+}
+
+.card {
+  flex: 1;
+  
+  border-radius: 10px; 
+  box-shadow: 0 4px 35px rgba(0, 0, 0, 0.1); 
+  justify-content: center; 
+}
+
+.card-body{
+  background-color: rgb(241, 241, 241);
+
+}
+
+
+
+
+
+p {
+  font-size: 1em; /* Taille de la police */
+  color: #001457; /* Couleur du texte */
+  margin-top: 10px; /* Espace en haut du paragraphe */
+  text-align: center;
+
+
+}/* styles.css */
+
+
+
+.header {
+    display: flex; /* Utilisation de flexbox pour aligner l'image et le texte */
+    align-items: center; /* Alignement vertical centré */
+    margin-top: -5px; /* Espace en haut */
+    border-bottom: 2px solid #000; /* Ligne en bas */
+}
+
+
+.title-image img {
+    height: 50px; /* Ajustez la hauteur de l'image selon vos besoins */
+}
+

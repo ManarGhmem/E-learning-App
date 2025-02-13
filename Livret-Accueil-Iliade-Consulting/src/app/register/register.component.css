@@ -1,0 +1,10 @@
+::after{
+   background-color: rgb(126, 181, 192) ;
+}
+.text-info {
+    /* --bs-text-opacity: 1; */
+    color: rgb(60, 129, 143) !important;
+}
+a { color: rgba(var(--bs-link-color-rgb), var(--bs-link-opacity, 1));
+    text-decoration: underline;
+}

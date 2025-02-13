@@ -1,0 +1,204 @@
+.img-responsive{
+    display: block;
+    height: auto;
+    max-width: 100%;
+      margin:0 auto;
+ }
+ .card-text{
+   height: 100px;
+ }
+ .card-title{
+  text-decoration: underline;
+  height: 50px;
+ }
+ .bb-title {
+    position: relative;
+    display: inline-block;
+    color: #f07317;
+    margin-left: 50%;
+    text-shadow: 2px 4px 3px rgba(226, 89, 26, 0.5);
+    text-decoration: underline;
+    
+}
+/* .hover-animation {
+    transition: all 0.5s ease; 
+  }
+ 
+  .hover-animation:hover {
+    transform: scale(1.1);
+  } */
+
+
+  .card-sm {
+    max-width: 200px; /* Largeur maximale souhaitée pour les cartes plus petites */
+}
+
+.card {
+  box-shadow: 10px 15px 20px rgba(0, 0, 0, 0.1); /* Adjust the values to achieve desired shadow effect */
+
+}
+
+    .carousel-container {
+        /* overflow: hidden; */
+        width: 100%;
+        height: 80%;
+        position: relative;
+      }
+      .carousel {
+
+        max-width: 100%; 
+        padding: 20px; /* Add padding to the carousel container */
+
+        width: fit-content; /* Adjust width based on content */
+    }
+
+  
+      .user {
+        flex: 0 0 20%; /* Show 3 users in one row on larger screens */
+        margin-right: 30px; /* Add spacing between cards */
+        text-align: center;
+        padding: 10px;
+        background-color: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        max-width: 80%; 
+        /* margin: 5px; */
+      }
+      .user-card {
+        display: inline-block; /* Pour que les cartes d'utilisateur apparaissent côte à côte */
+        margin: 10px; /* Marge entre les cartes d'utilisateur */
+    }
+    
+    .user-card img {
+        width: 250px; /* Largeur souhaitée */
+        height: 250px; /* Hauteur souhaitée */
+        object-fit: cover; /* Pour s'assurer que l'image remplit l'espace défini */
+    }
+    
+
+      
+      .info {
+        margin-top: 10px;
+        text-align: center;
+      }
+      
+   
+
+
+
+      .card-padding {
+        padding: 20px;
+    }
+    
+
+    .card-img-top {
+        width: 100%;
+        height: auto;
+    }
+
+
+
+    textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-color: rgb(0, 0, 0);
+      }
+      
+      button {
+      background-color: #007bff;
+      color: #fff;
+      padding: 8px 16px;
+      border: none;
+      cursor: pointer;
+      }
+      
+      button:hover {
+      background-color: #0056b3;
+      }
+      
+      ul {
+      list-style-type: none;
+      padding: 0;
+      }
+      
+      li {
+      margin-bottom: 5px;
+      }
+      
+      .delete-icon {
+      color: #ff0000; /* Rouge */
+      cursor: pointer; /* Curseur pointeur */
+      margin-left: 5px; /* Marge à gauche pour l'espacement */
+      background-color: white;
+      }
+      
+      .delete-icon:hover {
+      color: #cc0000; /* Rouge foncé au survol */
+      background-color: #dbb6b6;
+      border-radius: 10%;
+      }
+      .btn-outline-success {
+      --bs-btn-color: #0056b3;
+      --bs-btn-border-color: #0056b3;
+      --bs-btn-hover-color: #fff;
+      --bs-btn-hover-bg: #0056b3;
+      --bs-btn-hover-border-color: #0056b3;
+      --bs-btn-focus-shadow-rgb: 25, 135, 84;
+      --bs-btn-active-color: #fff;
+      --bs-btn-active-bg: #0056b3;
+      --bs-btn-active-border-color: #0056b3;
+      --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+      --bs-btn-disabled-color: #0056b3;
+      --bs-btn-disabled-bg: transparent;
+      --bs-btn-disabled-border-color: #0056b3;
+      --bs-gradient: none;
+      }
+      .btn-outline-success:focus, .btn-outline-success:not(:disabled):not(.disabled).active:focus, .btn-outline-success:not(:disabled):not(.disabled):active:focus, .show>.btn-outline-success.dropdown-toggle:focus {
+      box-shadow: 0 0 0 0.2rem #0056b3;
+      }
+      .btn-outline-success.clicked {
+      background-color: #0056b3 !important;
+      color: #fff !important;
+      }
+      
+      .message-item {
+      margin-bottom: 10px; /* Ajoute un espace entre chaque message */
+      padding: 10px; /* Ajoute un remplissage autour de chaque message */
+      background-color: #cecece; /* Ajoute une couleur de fond à chaque message */
+      border-radius: 5px; /* Ajoute des coins arrondis aux messages */
+      position: relative;
+      }
+      
+      .delete-icon {
+      position: absolute;
+      top: 0;
+      right: 0;
+      background-color: #f0f0f0;
+      }
+
+      /* Style pour l'input */
+input[formControlName="userName"] {
+  /* Ajoutez vos styles personnalisés ici */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* Style pour le placeholder */
+input[formControlName="userName"]::placeholder {
+  /* Ajoutez les styles du placeholder ici */
+  color: #999;
+}
+
+/* Style pour le champ requis */
+input[formControlName="userName"]:required {
+  /* Ajoutez les styles pour indiquer qu'il est requis */
+  border-color: rgb(0, 0, 0);
+}
+
+
+img {
+  width:250px;
+}
